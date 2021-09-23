@@ -1,0 +1,49 @@
+.create-form {
+
+
+    .title-form {
+        text-align: center;
+        font-family: $font-family-serif;
+        margin-bottom: 12px;
+        font-weight: bold;
+    }
+
+    .form-group {
+        label {
+            font-family: $font-family-serif;
+            font-size: 24px;
+        }
+    }
+}
+
+.button-custom {
+    border: none;
+    padding: 6px 12px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    font-family: $font-family-monospace;
+
+    &-grey {
+        background-color: $dark-grey;
+        border: 1px solid $dark-grey;
+        color: $white;
+
+        &:hover {
+            background-color: $light-grey;
+            border: 1px solid $grey;
+            color: $black;
+        }
+    }
+
+    &-blue {
+        background-color: $blue;
+        border: 1px solid $blue;
+        color: $white;
+
+        &:hover {
+            background-color: $light-blue;
+            border: 1px solid $blue;
+            color: $black;
+        }
+    }
+}

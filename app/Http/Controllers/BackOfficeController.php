@@ -37,6 +37,7 @@ class BackOfficeController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validateArticle($request);
         $data = $request->all();
         
         $newArticle = new Article();
@@ -92,5 +93,14 @@ class BackOfficeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function validateArticle(Request $request) {
+        $request->validate([
+            'title' => 'required|max:100',
+            'text' => 'required',
+            'photo' => 'nullable|url',
+            'author_id' => 'required'
+        ]);
     }
 }
