@@ -1,7 +1,7 @@
 <div class="top-footer">
     <div class="container">
         <div class="row top-footer-inner">
-            <div class="col-2">Conttaci</div>
+            <div class="col-2">Contattaci</div>
             <div class="col-2">Aiuto</div>
             <div class="col-2">Chi siamo</div>
             <div class="col-2">Carica Articolo</div>

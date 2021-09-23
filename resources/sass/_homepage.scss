@@ -1,0 +1,32 @@
+.home-img {
+    svg{
+        width: 100%;
+    }
+}
+
+.home-title {
+    font-size: 55px;
+    font-family: $font-family-title;
+
+    .italic {
+        font-style: italic;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+}
+
+.article-container {
+    margin-top: 24px;
+
+    .article {
+        height: 100%;
+        border: 1px solid $light-grey;
+        padding: 12px;
+
+        img {
+            width: 100%;
+        }
+    }
+}

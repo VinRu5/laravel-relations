@@ -10945,6 +10945,7 @@ a.text-dark:focus {
 body {
   font-family: "Roboto", sans-serif;
   color: #333;
+  background-color: #F5EFEA;
 }
 
 a {
@@ -10958,6 +10959,12 @@ a:hover {
 
 ul {
   list-style: none;
+}
+
+main {
+  padding-top: 84px;
+  padding-bottom: 24px;
+  background-color: #fff;
 }
 
 .top-navbar {
@@ -11025,5 +11032,36 @@ ul {
   height: 100%;
   display: flex;
   align-items: center;
+}
+
+.home-img svg {
+  width: 100%;
+}
+
+.home-title {
+  font-size: 55px;
+  font-family: "Libre Baskerville", serif;
+}
+
+.home-title .italic {
+  font-style: italic;
+}
+
+.home-title .bold {
+  font-weight: bold;
+}
+
+.article-container {
+  margin-top: 24px;
+}
+
+.article-container .article {
+  height: 100%;
+  border: 1px solid #ECECEC;
+  padding: 12px;
+}
+
+.article-container .article img {
+  width: 100%;
 }
 

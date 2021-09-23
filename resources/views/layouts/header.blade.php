@@ -3,7 +3,7 @@
     
         <div class="top-navbar-inner row align-items-center justify-content-between">
     
-            <a href="{{ route('home') }}" class="col-3 logo-navbar">
+            <a href="{{ route('home') }}" class="col-4 logo-navbar">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.78 181.78">
                     <defs>
                         <style>

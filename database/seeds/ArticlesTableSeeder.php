@@ -31,7 +31,7 @@ class ArticlesTableSeeder extends Seeder
             $article = new Article();
             $article->title = $faker->words(3, true);
             $article->text = $faker->paragraphs(4, true);
-            $article->photo = 'https://loremflickr.com/';
+            $article->photo = 'https://loremflickr.com/320/240/news';
             $authorKey= array_rand($listOfAuthor);
             $authorRand = $listOfAuthor[$authorKey];
             $article->author_id = $authorRand;

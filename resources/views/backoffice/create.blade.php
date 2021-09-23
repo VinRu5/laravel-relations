@@ -3,7 +3,9 @@
 
 @section('main')
 
-<div class="container">
+<div class="create-form">
+
+    <h2 class="title-form">Aggiungi Articolo</h2>
 
     @if ($errors->any())
         <div class="alert alert-danger">
