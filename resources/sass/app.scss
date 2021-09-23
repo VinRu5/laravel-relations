@@ -1,8 +1,32 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+//-----custom font-----
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto&family=Scheherazade+New&display=swap');
 
 // Variables
-@import 'variables';
+//@import 'variables';
+@import 'style';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+body {
+    font-family: $font-family-sans-serif;
+    color: $black;
+}
+
+a {
+    color: inherit;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+@import 'header';
