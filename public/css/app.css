@@ -10962,6 +10962,7 @@ ul {
 
 .top-navbar {
   height: 50px;
+  width: 100%;
   background-color: #333;
   position: fixed;
   top: 0;
@@ -10989,5 +10990,40 @@ ul {
   display: flex;
   justify-content: flex-end;
   font-family: "Scheherazade New", serif;
+}
+
+.top-footer {
+  background-color: #3C3D41;
+  color: #fff;
+  font-family: "Scheherazade New", serif;
+  font-size: 14px;
+  height: 40px;
+}
+
+.top-footer .container {
+  height: 100%;
+}
+
+.top-footer .container .top-footer-inner {
+  height: 100%;
+  align-items: center;
+}
+
+.bottom-footer {
+  background-color: #4F5054;
+  color: #fff;
+  font-family: "Scheherazade New", serif;
+  font-size: 12px;
+  height: 40px;
+}
+
+.bottom-footer .container {
+  height: 100%;
+}
+
+.bottom-footer .container .bottom-footer-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 

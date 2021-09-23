@@ -1,0 +1,36 @@
+.top-footer {
+    background-color: $dark-grey;
+    color: $white;
+    font-family: $font-family-serif;
+    font-size: 14px;
+    height: 40px;
+
+    .container {
+        height: 100%;
+
+        .top-footer-inner {
+            height: 100%;
+            align-items: center;
+        }
+    }
+
+}
+
+.bottom-footer {
+    background-color: $grey;
+    color: $white;
+    font-family: $font-family-serif;
+    font-size: 12px;
+    height: 40px;
+
+    .container {
+        height: 100%;
+
+        .bottom-footer-inner {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+}
