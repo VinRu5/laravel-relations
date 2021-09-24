@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Author;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class BackOfficeController extends Controller
@@ -26,7 +27,8 @@ class BackOfficeController extends Controller
     public function create()
     {
         $authors = Author::all();
-        return view('backoffice.create', compact('authors'));
+        $tags = Tag::all();
+        return view('backoffice.create', compact('authors', 'tags'));
     }
 
     /**
@@ -37,6 +39,7 @@ class BackOfficeController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->validateArticle($request);
         $data = $request->all();
         
@@ -46,6 +49,13 @@ class BackOfficeController extends Controller
         $newArticle->photo = $data['photo'];
         $newArticle->author_id = $data['author_id'];
         $newArticle->save();
+        
+        if(array_key_exists('tag', $data)) {
+            
+            foreach($data['tags'] as $tag) {
+                $newArticle->tag()->attach($tag);
+            }
+        }
 
         return redirect()->route('articles.show', $newArticle);
     }
@@ -58,6 +68,7 @@ class BackOfficeController extends Controller
      */
     public function show(Article $article)
     {
+
         return view('backoffice.show', compact('article'));
     }
 

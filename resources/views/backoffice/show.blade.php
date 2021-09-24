@@ -4,7 +4,12 @@
 @section('main')
 
 <div class="container">
-{{ $article->title }}
+    {{ $article->title }}
+    @foreach ($article->tag as $tag)
+        {{ $tag->name }}
+    @endforeach
+
+
 </div>
 
 
