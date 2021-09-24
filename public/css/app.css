@@ -11064,7 +11064,6 @@ main {
   border-left: 1px solid #ECECEC;
   border-right: 1px solid #ECECEC;
   padding: 12px;
-  position: relative;
 }
 
 .article-container .article-title {
@@ -11082,6 +11081,19 @@ main {
 .article-container .article-footer {
   border-top: 1px solid #ECECEC;
   font-size: 12px;
+  display: flex;
+}
+
+.article-container .article-footer-right {
+  flex-basis: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.article-container .article-footer-left {
+  flex-basis: 30%;
 }
 
 .article-container .article img {
@@ -11100,57 +11112,46 @@ main {
   font-size: 24px;
 }
 
-.tag-check {
+.chips {
+  padding: 3px 6px;
+  border-radius: 20px;
+  margin: 3px;
+}
+
+.chips-text {
+  color: #fff;
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
-  color: #fff;
 }
 
-.chips-container {
-  position: relative;
-  margin-bottom: 12px;
-}
-
-.chips-container .chips {
-  position: absolute;
-  top: 0;
-  left: 20px;
-  z-index: 0;
-  width: 150px;
-  height: 30px;
-  -webkit-transform: skew(-20deg);
-  -moz-transform: skew(-20deg);
-  -o-transform: skew(-20deg);
-}
-
-.chips-container .chips-blue {
+.chips-blue {
   background: #4b88ca;
+  border: 1px solid #E44503;
 }
 
-.chips-container .chips-green {
+.chips-green {
   background: #048347;
+  border: 1px solid #048347;
 }
 
-.chips-container .chips-purple {
+.chips-purple {
   background: #622856;
+  border: 1px solid #E44503;
 }
 
-.chips-container .chips-orange {
+.chips-orange {
   background: #f3981d;
+  border: 1px solid #E44503;
 }
 
-.chips-container .chips-red {
+.chips-red {
   background: #E44503;
+  border: 1px solid #E44503;
 }
 
-.chips-container .chips-dark-orange {
+.chips-dark-orange {
   background: #E16618;
-}
-
-.chips-container .chips-text {
-  position: relative;
-  top: 0;
-  left: 20px;
+  border: 1px solid #E44503;
 }
 
 .button-custom {

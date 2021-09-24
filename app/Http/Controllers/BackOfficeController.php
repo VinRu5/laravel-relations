@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Author;
 use App\Tag;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class BackOfficeController extends Controller
@@ -68,8 +69,8 @@ class BackOfficeController extends Controller
      */
     public function show(Article $article)
     {
-
-        return view('backoffice.show', compact('article'));
+        $dateArticle = new Carbon($article->created_at);
+        return view('backoffice.show', compact('article', 'dateArticle'));
     }
 
     /**

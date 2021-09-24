@@ -38,7 +38,9 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8">
                     <div class="article">
-                        <h2 class="article-title">{{ ucfirst($articles[0]->title) }}</h2>
+                        <a href="{{ route('articles.show', $articles[0]) }}">
+                            <h2 class="article-title">{{ ucfirst($articles[0]->title) }}</h2>
+                        </a>
                         <img src="{{ $articles[0]->photo }}" alt="photo articolo {{ $articles[0]->id }}">
                         <p class="article-text">
                             {{ $articles[0]->text }}
@@ -56,15 +58,18 @@
         @foreach ($articles as $article)
             <div class="article-container col-6 col-md-4 col-lg-2">
                 <div class="article">
-                    <h2 class="article-title">{{ ucfirst($article->title) }}</h2>
+                    <a href="{{ route('articles.show', $article) }}">
+                        <h2 class="article-title">{{ ucfirst($article->title) }}</h2>
+                    </a>
                     <img src="{{ $article->photo }}" alt="photo articolo {{ $article->id }}">
                     <p class="article-text">
                         {{ $article->text }}
                     </p>
                     <div class="article-footer">
-                        <div class="article-footer-author">{{ $article->author->name }}
-                            {{ $article->author->surname }}</div>
-                        <div class="article-footer-date">{{ $article->created_at }}</div>
+                        <div class="article-footer-author">
+                            {{ $article->author->name }}
+                            {{ $article->author->surname }}
+                        </div>
                     </div>
                 </div>
             </div>
