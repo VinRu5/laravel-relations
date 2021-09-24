@@ -22,7 +22,10 @@
                         </g>
                     </g>
                 </svg>
-                <div class="title-logo">the NEWS</div>
+                <div class="title-logo">
+                    <span class="italic">the</span>
+                    <span class="bold">NEWS</span>
+                </div>
             </a>
     
             <ul class="col-3 register-navbar">

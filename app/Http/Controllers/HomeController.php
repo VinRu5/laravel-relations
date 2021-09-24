@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+    
         $articles = Article::all();
+       
         return view('home', compact('articles'));
     }
 }

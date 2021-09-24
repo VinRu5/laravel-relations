@@ -1,5 +1,5 @@
 .home-img {
-    svg{
+    svg {
         width: 100%;
     }
 }
@@ -7,23 +7,44 @@
 .home-title {
     font-size: 55px;
     font-family: $font-family-title;
+}
 
-    .italic {
-        font-style: italic;
-    }
+.italic {
+    font-style: italic;
+}
 
-    .bold {
-        font-weight: bold;
-    }
+.bold {
+    font-weight: bold;
 }
 
 .article-container {
     margin-top: 24px;
+    border-top: 1px solid $light-grey;
+    border-bottom: 1px solid $light-grey;
+    padding-top: 12px;
+    padding-bottom: 12px;
 
     .article {
         height: 100%;
-        border: 1px solid $light-grey;
+        border-left: 1px solid $light-grey;
+        border-right: 1px solid $light-grey;
         padding: 12px;
+        position: relative;
+
+        &-title {
+            height: 150px;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        &-text {
+            padding-top: 12px;
+        }
+
+        &-footer {
+            border-top: 1px solid $light-grey;
+            font-size: 12px;
+        }
 
         img {
             width: 100%;

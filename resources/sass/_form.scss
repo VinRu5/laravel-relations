@@ -1,6 +1,4 @@
 .create-form {
-
-
     .title-form {
         text-align: center;
         font-family: $font-family-serif;
@@ -9,10 +7,63 @@
     }
 
     .form-group {
-        label {
+        .label-check {
             font-family: $font-family-serif;
             font-size: 24px;
         }
+    }
+}
+
+.tag-check {
+    font-family: $font-family-monospace;
+    font-size: 12px;
+    color: $white;
+}
+
+.chips-container {
+    position: relative;
+    margin-bottom: 12px;
+
+    .chips {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        z-index: 0;
+        width: 150px;
+        height: 30px;
+        -webkit-transform: skew(-20deg);
+        -moz-transform: skew(-20deg);
+        -o-transform: skew(-20deg);
+
+        &-blue {
+            background: $blue;
+        }
+
+        &-green {
+            background: $green;
+        }
+
+        &-purple {
+            background: $purple;
+        }
+
+        &-orange {
+            background: $orange;
+        }
+
+        &-red {
+            background: $red;
+        }
+
+        &-dark-orange {
+            background: $dark-orange;
+        }
+    }
+
+    .chips-text {
+        position: relative;
+        top: 0;
+        left: 20px;
     }
 }
 
