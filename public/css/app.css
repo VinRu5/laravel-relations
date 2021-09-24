@@ -11126,7 +11126,7 @@ main {
 
 .chips-blue {
   background: #4b88ca;
-  border: 1px solid #E44503;
+  border: 1px solid #4b88ca;
 }
 
 .chips-green {
@@ -11136,12 +11136,12 @@ main {
 
 .chips-purple {
   background: #622856;
-  border: 1px solid #E44503;
+  border: 1px solid #622856;
 }
 
 .chips-orange {
   background: #f3981d;
-  border: 1px solid #E44503;
+  border: 1px solid #f3981d;
 }
 
 .chips-red {
@@ -11151,7 +11151,7 @@ main {
 
 .chips-dark-orange {
   background: #E16618;
-  border: 1px solid #E44503;
+  border: 1px solid #E16618;
 }
 
 .button-custom {

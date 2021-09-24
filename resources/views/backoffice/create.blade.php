@@ -53,7 +53,7 @@
             <div class="form-group row">
                 @foreach ($tags as $tag)
                 <div class="col-6 col-sm-4 col-md-3">
-                    <span class="chips chips-green">
+                    <span class="chips chips-blue">
                         <input type="checkbox" class="" id="author{{$loop->iteration}}" name="tags[]" value="{{ $tag->id }}">
                         <label class="chips-text" for="author{{$loop->iteration}}">#{{ $tag->name }}</label>
                     </span>

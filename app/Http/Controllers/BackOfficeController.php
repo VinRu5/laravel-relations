@@ -29,6 +29,7 @@ class BackOfficeController extends Controller
     {
         $authors = Author::all();
         $tags = Tag::all();
+
         return view('backoffice.create', compact('authors', 'tags'));
     }
 
@@ -115,4 +116,5 @@ class BackOfficeController extends Controller
             'author_id' => 'required'
         ]);
     }
+
 }

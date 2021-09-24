@@ -26,7 +26,7 @@
                         <div class="article-footer-right">
                             @foreach ($article->tag as $tag)
 
-                                <span class="chips chips-green chips-text">
+                                <span class="chips chips-blue chips-text">
                                     #{{ $tag->name }}
                                 </span>
 
