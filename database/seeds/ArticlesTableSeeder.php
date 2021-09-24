@@ -2,6 +2,7 @@
 
 use App\Article;
 use App\Author;
+use App\Tag;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 
@@ -27,6 +28,29 @@ class ArticlesTableSeeder extends Seeder
             $listOfAuthor[] = $author->id;
         }
 
+        $tags = [
+            'cultura',
+            'varietà',
+            'occhiali',
+            'montagna',
+            'specialista',
+            'computers',
+            'idea',
+            'sostenibilità',
+            'musica',
+            'insieme',
+            'vip'
+        ];
+
+        $listOfTags = [];
+
+        foreach($tags as $tag) {
+            $newTag = new Tag();
+            $newTag->name = $tag;
+            $newTag->save();
+            $listOfTags[] = $newTag->id;
+        }
+
         for ($i = 0; $i < 30; $i++) {
             $article = new Article();
             $article->title = $faker->words(3, true);
@@ -36,6 +60,15 @@ class ArticlesTableSeeder extends Seeder
             $authorRand = $listOfAuthor[$authorKey];
             $article->author_id = $authorRand;
             $article->save();
+
+            $tagKey = array_rand($listOfTags, 3);
+            $tag1 = $listOfTags[$tagKey[0]];
+            $tag2 = $listOfTags[$tagKey[1]];
+            $tag3 = $listOfTags[$tagKey[2]];
+
+            $article->tag()->attach($tag1);
+            $article->tag()->attach($tag2);
+            $article->tag()->attach($tag3);
 
         }
     }
