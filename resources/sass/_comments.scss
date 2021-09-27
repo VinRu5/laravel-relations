@@ -1,0 +1,41 @@
+.comments {
+    padding: 12px 24px;
+    //margin-top: 24px;
+    
+    &-container {
+        border-left: 1px solid $light-grey;
+        border-right: 1px solid $light-grey;
+        padding: 12px 24px;
+    }
+
+    &-inner {
+        padding: 12px 24px;
+        background-color: $light-grey;
+    }
+
+    .comment {
+        border-top: 1px solid $banner-grey;
+        border-bottom: 1px solid $banner-grey;
+        padding: 12px;
+
+        &-user {
+            border-bottom: 1px solid $banner-grey;
+            font-size: 14px;
+            font-family: $font-family-serif;
+        }
+        
+        &-date {
+            border-top: 1px solid $banner-grey;
+            font-size: 14px;
+            font-family: $font-family-serif;
+        }
+
+        &-text {
+            padding: 12px 0;
+        }
+
+        textarea {
+            width: 100%;
+        }
+    }
+}

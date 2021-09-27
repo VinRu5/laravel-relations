@@ -3,8 +3,8 @@
 
 @section('main')
 
-    <div class="container">
-        <h1 class="article-title">{{ ucfirst($article->title) }}</h1>
+    <div class="row">
+        <h1 class="article-title col-12">{{ ucfirst($article->title) }}</h1>
         <div class="article-container col-12">
             <div class="article">
                 <div class="row justify-content-center">
@@ -41,9 +41,9 @@
             </div>
         </div>
 
-        <div id="app">
-            <application />
-        </div>
+    </div>
+    <div id="app">
+        <Comments />
     </div>
 
 

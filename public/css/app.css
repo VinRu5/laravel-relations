@@ -11216,3 +11216,44 @@ main {
   color: #333;
 }
 
+.comments {
+  padding: 12px 24px;
+}
+
+.comments-container {
+  border-left: 1px solid #ECECEC;
+  border-right: 1px solid #ECECEC;
+  padding: 12px 24px;
+}
+
+.comments-inner {
+  padding: 12px 24px;
+  background-color: #ECECEC;
+}
+
+.comments .comment {
+  border-top: 1px solid #c1c0c0;
+  border-bottom: 1px solid #c1c0c0;
+  padding: 12px;
+}
+
+.comments .comment-user {
+  border-bottom: 1px solid #c1c0c0;
+  font-size: 14px;
+  font-family: "Scheherazade New", serif;
+}
+
+.comments .comment-date {
+  border-top: 1px solid #c1c0c0;
+  font-size: 14px;
+  font-family: "Scheherazade New", serif;
+}
+
+.comments .comment-text {
+  padding: 12px 0;
+}
+
+.comments .comment textarea {
+  width: 100%;
+}
+

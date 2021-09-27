@@ -38,7 +38,18 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $newComment = new Comment();
+        $newComment->text = $data['text'];
+        $newComment->article_id = $data['article_id'];
+        $newComment->save();
+        $comments = Comment::where('article_id', $data['article_id'])->get();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $comments
+        ]);
     }
 
     /**
