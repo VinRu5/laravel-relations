@@ -78,6 +78,16 @@
         border: 1px solid $blue;
     }
 
+    &-dark-blue {
+        background: $dark-blue;
+        border: 1px solid $dark-blue;
+    }
+
+    &-light-blue {
+        background: $light-blue;
+        border: 1px solid $light-blue;
+    }
+
     &-green {
         background: $green;
         border: 1px solid $green;
@@ -98,9 +108,19 @@
         border: 1px solid $red;
     }
 
+    &-dark-red {
+        background: $dark-red;
+        border: 1px solid $dark-red;
+    }
+
     &-dark-orange {
         background: $dark-orange;
         border: 1px solid $dark-orange;
+    }
+
+    &-dark-grey {
+        background: $dark-grey;
+        border: 1px solid $dark-grey;
     }
 }
 

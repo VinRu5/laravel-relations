@@ -17,6 +17,11 @@
     font-weight: bold;
 }
 
+.article-title {
+    font-family: $font-family-serif;
+    font-size: 40px;
+}
+
 .article-container {
     margin-top: 24px;
     border-top: 1px solid $light-grey;
@@ -32,17 +37,22 @@
 
         &-title {
             height: 150px;
+            font-family: $font-family-serif;
+            font-size: 40px;
             word-wrap: break-word;
             hyphens: auto;
+            overflow: hidden;
         }
 
         &-text {
             padding-top: 12px;
+            word-wrap: break-word;
         }
 
         &-footer {
             border-top: 1px solid $light-grey;
-            font-size: 12px;
+            font-size: 14px;
+            font-family: $font-family-serif;
             display: flex;
 
             &-right {

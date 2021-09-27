@@ -8,9 +8,11 @@
             <div class="article-container col-12">
                 <div class="article">
                     <div class="row justify-content-center">
+                        @if(strlen($article->photo) > 0)
                         <div class="col-8">
                             <img src="{{ $article->photo }}" alt="photo articolo {{ $article->id }}">
                         </div>
+                        @endif
                     </div>
                     <p class="article-text">
                         {{ $article->text }}
@@ -26,7 +28,9 @@
                         <div class="article-footer-right">
                             @foreach ($article->tag as $tag)
 
-                                <span class="chips chips-blue chips-text">
+                                <span class="chips chips-text
+                               @include('backoffice.switchChips')
+                                ">
                                     #{{ $tag->name }}
                                 </span>
 

@@ -11051,6 +11051,11 @@ main {
   font-weight: bold;
 }
 
+.article-title {
+  font-family: "Scheherazade New", serif;
+  font-size: 40px;
+}
+
 .article-container {
   margin-top: 24px;
   border-top: 1px solid #ECECEC;
@@ -11068,19 +11073,24 @@ main {
 
 .article-container .article-title {
   height: 150px;
+  font-family: "Scheherazade New", serif;
+  font-size: 40px;
   word-wrap: break-word;
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
+  overflow: hidden;
 }
 
 .article-container .article-text {
   padding-top: 12px;
+  word-wrap: break-word;
 }
 
 .article-container .article-footer {
   border-top: 1px solid #ECECEC;
-  font-size: 12px;
+  font-size: 14px;
+  font-family: "Scheherazade New", serif;
   display: flex;
 }
 
@@ -11129,6 +11139,16 @@ main {
   border: 1px solid #4b88ca;
 }
 
+.chips-dark-blue {
+  background: #00233E;
+  border: 1px solid #00233E;
+}
+
+.chips-light-blue {
+  background: #EAF4FF;
+  border: 1px solid #EAF4FF;
+}
+
 .chips-green {
   background: #048347;
   border: 1px solid #048347;
@@ -11149,9 +11169,19 @@ main {
   border: 1px solid #E44503;
 }
 
+.chips-dark-red {
+  background: #850029;
+  border: 1px solid #850029;
+}
+
 .chips-dark-orange {
   background: #E16618;
   border: 1px solid #E16618;
+}
+
+.chips-dark-grey {
+  background: #3C3D41;
+  border: 1px solid #3C3D41;
 }
 
 .button-custom {

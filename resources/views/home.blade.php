@@ -48,7 +48,6 @@
                         <div class="article-footer">
                             <div class="article-footer-author">{{ $articles[0]->author->name }}
                                 {{ $articles[0]->author->surname }}</div>
-                            <div class="article-footer-date">{{ $articles[0]->created_at }}</div>
                         </div>
                     </div>
                 </div>
@@ -61,7 +60,9 @@
                     <a href="{{ route('articles.show', $article) }}">
                         <h2 class="article-title">{{ ucfirst($article->title) }}</h2>
                     </a>
+                    @if(strlen($article->photo) > 0)
                     <img src="{{ $article->photo }}" alt="photo articolo {{ $article->id }}">
+                    @endif
                     <p class="article-text">
                         {{ $article->text }}
                     </p>

@@ -27,10 +27,12 @@ class BackOfficeController extends Controller
      */
     public function create()
     {
+        $showURL = url()->current();
+        $flagShow = strpos($showURL, 'edit');
         $authors = Author::all();
         $tags = Tag::all();
 
-        return view('backoffice.create', compact('authors', 'tags'));
+        return view('backoffice.create', compact('authors', 'tags', 'flagShow'));
     }
 
     /**
@@ -41,23 +43,12 @@ class BackOfficeController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $this->validateArticle($request);
         $data = $request->all();
-        
         $newArticle = new Article();
-        $newArticle->title = $data['title'];
-        $newArticle->text = $data['text'];
-        $newArticle->photo = $data['photo'];
-        $newArticle->author_id = $data['author_id'];
-        $newArticle->save();
         
-        if(array_key_exists('tag', $data)) {
-            
-            foreach($data['tags'] as $tag) {
-                $newArticle->tag()->attach($tag);
-            }
-        }
+        $this->saveArticle($data, $newArticle);
 
         return redirect()->route('articles.show', $newArticle);
     }
@@ -80,9 +71,14 @@ class BackOfficeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Article $article)
     {
-        //
+        $showURL = url()->current();
+        $flagShow = strpos($showURL, 'edit');
+        $authors = Author::all();
+        $tags = Tag::all();
+
+        return view('backoffice.create', compact('authors', 'tags', 'flagShow', 'article'));
     }
 
     /**
@@ -92,9 +88,11 @@ class BackOfficeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Article $article)
     {
-        //
+        $this->saveArticle($request, $article);
+
+        return redirect()->route('articles.show', $article);
     }
 
     /**
@@ -115,6 +113,22 @@ class BackOfficeController extends Controller
             'photo' => 'nullable|url',
             'author_id' => 'required'
         ]);
+    }
+
+    private function saveArticle($data, Article $newArticle){
+
+        $newArticle->title = $data['title'];
+        $newArticle->text = $data['text'];
+        $newArticle->photo = $data['photo'];
+        $newArticle->author_id = $data['author_id'];
+        $newArticle->save();
+
+        if (array_key_exists('tags', $data)) {
+
+            foreach ($data['tags'] as $tag) {
+                $newArticle->tag()->attach($tag);
+            }
+        }
     }
 
 }
