@@ -60,9 +60,9 @@
                     <a href="{{ route('articles.show', $article) }}">
                         <h2 class="article-title">{{ ucfirst($article->title) }}</h2>
                     </a>
-                    @if(strlen($article->photo) > 0)
+                    @isset($article->photo)
                     <img src="{{ $article->photo }}" alt="photo articolo {{ $article->id }}">
-                    @endif
+                    @endisset
                     <p class="article-text">
                         {{ $article->text }}
                     </p>

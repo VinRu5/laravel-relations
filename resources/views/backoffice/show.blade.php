@@ -8,11 +8,11 @@
             <div class="article-container col-12">
                 <div class="article">
                     <div class="row justify-content-center">
-                        @if(strlen($article->photo) > 0)
+                        @isset($article->photo)
                         <div class="col-8">
                             <img src="{{ $article->photo }}" alt="photo articolo {{ $article->id }}">
                         </div>
-                        @endif
+                        @endisset
                     </div>
                     <p class="article-text">
                         {{ $article->text }}
@@ -39,7 +39,9 @@
                     </div>
                 </div>
             </div>
-
+            @foreach ($article->comment as $comment)
+                {{ $comment->user }}
+            @endforeach
     </div>
 
 

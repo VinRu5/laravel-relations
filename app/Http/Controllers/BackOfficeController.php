@@ -122,12 +122,14 @@ class BackOfficeController extends Controller
         $newArticle->photo = $data['photo'];
         $newArticle->author_id = $data['author_id'];
         $newArticle->save();
+        //dd($data['tags']);
+        if (array_key_exists('tags', $data->toArray())) {
 
-        if (array_key_exists('tags', $data)) {
+            $newArticle->tag()->sync($data['tags']);
 
-            foreach ($data['tags'] as $tag) {
-                $newArticle->tag()->attach($tag);
-            }
+            // foreach ($data['tags'] as $tag) {
+            //     $newArticle->tag()->attach($tag);
+            // }
         }
     }
 
