@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Comment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $getArticleID = $_GET['article_id'];
+        $comments = Comment::where('article_id', $getArticleID)->get();
+        return response()->json($comments);
     }
 
     /**

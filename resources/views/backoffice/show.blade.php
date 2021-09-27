@@ -4,44 +4,46 @@
 @section('main')
 
     <div class="container">
-        <h1 class="article-title">{{ ucfirst($article->title) }}</h2>
-            <div class="article-container col-12">
-                <div class="article">
-                    <div class="row justify-content-center">
-                        @isset($article->photo)
+        <h1 class="article-title">{{ ucfirst($article->title) }}</h1>
+        <div class="article-container col-12">
+            <div class="article">
+                <div class="row justify-content-center">
+                    @isset($article->photo)
                         <div class="col-8">
                             <img src="{{ $article->photo }}" alt="photo articolo {{ $article->id }}">
                         </div>
-                        @endisset
-                    </div>
-                    <p class="article-text">
-                        {{ $article->text }}
-                    </p>
-                    <div class="article-footer">
-                        <div class="article-footer-left">
-                            <div class="article-footer-author">
-                                {{ $article->author->name }}
-                                {{ $article->author->surname }}
-                            </div>
-                            <div class="article-footer-date">{{ $dateArticle->format('d M Y') }}</div>
+                    @endisset
+                </div>
+                <p class="article-text">
+                    {{ $article->text }}
+                </p>
+                <div class="article-footer">
+                    <div class="article-footer-left">
+                        <div class="article-footer-author">
+                            {{ $article->author->name }}
+                            {{ $article->author->surname }}
                         </div>
-                        <div class="article-footer-right">
-                            @foreach ($article->tag as $tag)
+                        <div class="article-footer-date">{{ $dateArticle->format('d M Y') }}</div>
+                    </div>
+                    <div class="article-footer-right">
+                        @foreach ($article->tag as $tag)
 
-                                <span class="chips chips-text
+                            <span
+                                class="chips chips-text
                                @include('backoffice.switchChips')
                                 ">
-                                    #{{ $tag->name }}
-                                </span>
+                                #{{ $tag->name }}
+                            </span>
 
-                            @endforeach
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-            @foreach ($article->comment as $comment)
-                {{ $comment->user }}
-            @endforeach
+        </div>
+
+        <div id="app">
+            <application />
+        </div>
     </div>
 
 
