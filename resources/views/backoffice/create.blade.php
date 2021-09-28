@@ -22,11 +22,11 @@
 
         
         @if($flagShow)
-        <form action="{{ route('articles.update', $article) }}" method="POST">
+        <form action="{{ route('articles.update', $article) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
         @else
-        <form action="{{ route('articles.store') }}" method="POST">
+        <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
         @endif
 
@@ -66,8 +66,8 @@
             </div>
 
             <div class="form-group">
-                <label class="label-check" for="photo">Inserisci l'URL dell foto</label>
-                <input type="text" class="form-control" name="photo" id="photo" @if ($flagShow)
+                <label class="label-check" for="photoFile">Carica la foto</label>
+                <input type="file" class="form-control" name="photoFile" id="photoFile" @if ($flagShow)
                 value="{{ $article->photo }}"
                 @endif
                 >

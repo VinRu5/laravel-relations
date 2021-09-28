@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Author;
+use App\Mail\SendAdvMail;
 use App\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class BackOfficeController extends Controller
 {
@@ -49,6 +52,7 @@ class BackOfficeController extends Controller
         $newArticle = new Article();
         
         $this->saveArticle($data, $newArticle);
+        Mail::to('prova@io.com')->send(new SendAdvMail($newArticle)); 
 
         return redirect()->route('articles.show', $newArticle);
     }
@@ -119,18 +123,21 @@ class BackOfficeController extends Controller
 
         $newArticle->title = $data['title'];
         $newArticle->text = $data['text'];
-        $newArticle->photo = $data['photo'];
+        $imgPath = Storage::put('img', $data['photoFile']);
+        $newArticle->photo = $imgPath;
         $newArticle->author_id = $data['author_id'];
         $newArticle->save();
-        //dd($data['tags']);
-        if (array_key_exists('tags', $data->toArray())) {
+
+
+
+        //if (array_key_exists('tags', $data->toArray())) {
 
             $newArticle->tag()->sync($data['tags']);
 
             // foreach ($data['tags'] as $tag) {
             //     $newArticle->tag()->attach($tag);
             // }
-        }
+        //}
     }
 
 }

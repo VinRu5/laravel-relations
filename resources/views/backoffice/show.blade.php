@@ -10,7 +10,7 @@
                 <div class="row justify-content-center">
                     @isset($article->photo)
                         <div class="col-8">
-                            <img src="{{ $article->photo }}" alt="photo articolo {{ $article->id }}">
+                            <img src="{{ asset('storage/' . $article->photo) }}" alt="photo articolo {{ $article->id }}">
                         </div>
                     @endisset
                 </div>
